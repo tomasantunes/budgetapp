@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Budget App</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container" id="app-container">
+	<div class="row">
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-4">
+	<div class="main">
+	  <h1>Budget</h1>
+	  <h3>Expenses</h3>
+		<table class="table-fill">
+		  <thead>
+			<tr style="background-color: #6489c4; color: #fff;">
+			  <th style="width: 40%;">Category</th>
+			  <th style="width: 40%;" class="text-right">Amount</th>
+			  <th style="width: 20%;"></th>
+			</tr>
+		  </thead>
+		  <tbody data-bind="foreach: rows">
+			<tr>
+			  <td data-bind="text: category"></td>
+			  <td class="text-right" data-bind="text: amount"></td>
+			  <td></td>
+			</tr>
+		  </tbody>
+		  <tfoot>
+			<tr>
+			  <td><input type="text" class="form-control" data-bind="textInput: newRow.category"></td>
+			  <td><input type="text" class="form-control" data-bind="textInput: newRow.amount"></td>
+			  <td><button class="btn btn-primary btn-block" data-bind="click: addRow">+</button></td>
+			</tr>
+		  </tfoot>
+
+		</table>
+	  <h3>Totals</h3>
+		<table class="table-fill">
+		  <thead>
+		  </thead>
+			<tr>
+			  <td style="width: 40%;">Total Income</td>
+			  <td style="width: 40%;"><input type="text" class="form-control" data-bind="textInput: totalIncome"></td>
+			  <td style="width: 20%;"></td>
+			</tr>
+			<tr>
+			  <td>Total Expense</td>
+			  <td class="text-right" data-bind="text: totalExpense"></td>
+			  <td></td>
+			</tr>
+			<tr>
+			  <td>Total Balance</td>
+			  <td class="text-right" data-bind="text: totalBalance"></td>
+			  <td></td>
+			</tr>
+
+		  </tfoot>
+		</table>
+	</div>
+  </div>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="knockout.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
